@@ -5,25 +5,25 @@ import java.util.Scanner;
 public class Questao01 {
 
 	public static void main(String[] args) {
-		
+
 		Scanner ler = new Scanner(System.in);
-		
-		double nota = -1;
-		
-		while(nota < 0 || nota > 10) {
-			System.out.println("Informe uma nota entre 0 e 10");
-			nota = ler.nextInt();
-			
-			if(nota < 0 || nota > 10) {
-				System.out.println("Valor informado e invalido");
+		boolean notaValida = false;
+
+		do {
+			System.out.println("Informe uma nota: ");
+			double nota = ler.nextDouble();
+
+			if (nota >= 0 && nota <= 10) {
+				notaValida = true;
+				System.out.println("Nota digitada foi " + nota);
+			} 
+			else {
+				System.out.println("Nota invalida");
 			}
-			
-			
-		}
+		} while (!notaValida);
+
 		
-		System.out.println("Nota digitada foi " + nota);
-		
-		
+
 		ler.close();
 
 	}
